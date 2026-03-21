@@ -18,7 +18,7 @@ const AboutUs = () => {
   const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${message}`;
 
   return (
-    <>
+    <div className="about-page-wrapper">
       <section className="about-container">
         {/* Título com Background Decorativo */}
         <div className="title-wrapper">
@@ -46,13 +46,9 @@ const AboutUs = () => {
               pessoas com o dinheiro. Desenvolvedora do Valoriza App, nossa
               startup combina engenharia de software de ponta com um design
               intuitivo para entregar uma plataforma de planejamento financeiro
-              robusta e acessível. Sob a liderança de especialistas em
-              Desenvolvimento e Qualidade, focamos em performance, segurança e
-              uma experiência de usuário impecável, garantindo que o controle
-              das suas finanças seja tão fluido quanto clicar em um botão.
+              robusta e acessível.
             </p>
 
-            {/* Link para WhatsApp estilizado como botão */}
             <a
               href={whatsappUrl}
               target="_blank"
@@ -87,22 +83,23 @@ const AboutUs = () => {
           <InfoCard
             icon={<Target size={30} />}
             title="MISSÃO"
-            text="Desenvolver tecnologias intuitivas que simplificam o planejamento financeiro, entregando clareza e controle na palma da mão de cada usuário."
+            text="Desenvolver tecnologias intuitivas que simplificam o planejamento financeiro."
           />
           <InfoCard
             icon={<Eye size={30} />}
             title="VISÃO"
-            text="Ser a principal referência em soluções digitais de gestão pessoal, transformando a forma como as pessoas se relacionam com o próprio dinheiro."
+            text="Ser a principal referência em soluções digitais de gestão pessoal."
           />
           <InfoCard
             icon={<Heart size={30} />}
             title="VALORES"
-            text="Transparência total, segurança de dados rigorosa e uma experiência de usuário (UX) centrada na facilidade e na alta performance."
+            text="Transparência total, segurança de dados rigorosa e alta performance."
           />
         </div>
       </section>
+
       <Footer />
-    </>
+    </div>
   );
 };
 
