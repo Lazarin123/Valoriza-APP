@@ -1,8 +1,16 @@
+import React from "react";
+import "./App.css";
+import { Route, Routes } from "react-router-dom";
+import LoginPage from "./pages/loginPage";
+
 function App() {
   return (
     <>
-      <h1>Iniciando o Projeto</h1>
-      <p>testes</p>
+      {/* <Header/> */}
+      <Routes>
+        <Route path="/" element={<LoginPage />} />
+
+      </Routes>
     </>
   );
 }
