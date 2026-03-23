@@ -10,6 +10,7 @@ import "./AboutUs.scss";
 import Footer from "../../components/Footer/Footer";
 import Header from "../../components/Header/Header";
 import Sidebar from "../../components/SideBar/SideBar";
+import aboutImage from "../../assets/images/sobreImage.jpg";
 
 const AboutUs = () => {
   const whatsappNumber = "5511946701625";
@@ -35,11 +36,7 @@ const AboutUs = () => {
         {/* Conteúdo Principal */}
         <div className="main-content">
           <div className="image-wrapper">
-            <img
-              src="../../assets/images/foto sobre nós.jpg"
-              alt="Dashboard Valoriza"
-              className="about-image"
-            />
+            <img src={aboutImage} alt="Sobre Nós" className="about-image" />
           </div>
 
           <div className="text-content">

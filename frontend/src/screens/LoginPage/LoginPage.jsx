@@ -32,25 +32,13 @@ const LoginPage = () => {
                 className="font-bold text-start pl-2 text-sm"
                 htmlFor="name"
               >
-                Name *
-              </label>
-              <input
-                type="text"
-                className="border border-black rounded-2xl h-11 px-4 py-3"
-                placeholder="Seu Nome"
-              />
-            </div>
-            <div className="flex flex-col gap-2.5 text-start">
-              <label
-                className="font-bold text-start pl-2 text-sm"
-                htmlFor="name"
-              >
                 Email *
               </label>
               <input
                 type="text"
                 className="border border-black rounded-2xl h-11 px-4 py-3"
                 placeholder="seuemail@gmail.com"
+                required
               />
             </div>
             <div className="flex flex-col gap-2.5 text-start">
@@ -64,6 +52,7 @@ const LoginPage = () => {
                 type="text"
                 className="border border-black rounded-2xl h-11 px-4 py-3"
                 placeholder="Min. 8 characters"
+                required
               />
             </div>
             <button className="border w-full rounded-2xl shadow-2xl bg-[#FD7E15] text-white h-12">
@@ -72,7 +61,7 @@ const LoginPage = () => {
             <p className="text-sm text-start text-[#A3AED0]">
               Ainda não tem uma conta?{" "}
               <span className="text-[#FD7E15]">
-                <Link to="/signin">Vamos Criar uma!</Link>
+                <Link to="/sigin">Vamos Criar uma!</Link>
               </span>
             </p>
           </form>

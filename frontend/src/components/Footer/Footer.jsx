@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { Mail, Linkedin, MessageSquareText } from "lucide-react";
 import "./Footer.scss";
+import footerImage from "../../assets/images/ValorizaApp.png";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -19,7 +20,7 @@ const Footer = () => {
         {/* Lado Esquerdo: Logo e Slogan */}
         <div className="footer-brand">
           <div className="logo-box">
-            <img src="../../assets/images/ValorizaApp.png" alt="Valoriza App" />
+            <img src={footerImage} alt="Sobre Nós" />
           </div>
           <p>Mais controle. Mais clareza. Mais resultados.</p>
         </div>
