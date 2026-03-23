@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import videoBg from "../../assets/videos/LoginPageVideo.mp4";
 
 const LoginPage = () => {
   return (
@@ -8,7 +9,7 @@ const LoginPage = () => {
         <div className="flex flex-col my-auto justify-center items-center ">
           <div className=" flex gap-5 w-full max-w-md mt- flex-col items-center justify-center">
             <h1 className="text-4xl whitespace-nowrap text-[#2B3674] text-center font-bold">
-              Olá, Seja Bem Vindo de volta!
+              Olá, Seja Bem Vindo ao Valoriza!
             </h1>
             <p className="text-sm text-center text-[#A3AED0]">
               Transforme sua jornada Financeira!
@@ -74,6 +75,16 @@ const LoginPage = () => {
         </p>
       </div>
       <div className="w-full display_bg relative">
+        <video
+          autoPlay
+          loop
+          muted
+          playsInline
+          className="absolute top-0 left-0 w-full h-full object-cover -z-10"
+        >
+          <source src={videoBg} type="video/mp4" />
+        </video>
+
         <div className="flex flex-col h-full justify-center items-center">
           <img
             className="size-56"
@@ -83,7 +94,7 @@ const LoginPage = () => {
           <p className="text-sm mb-4 text-white text-center">
             Seu dinheiro merece o nosso cuidado!
           </p>
-          <button className="border w-52  hover:bg-[#ffffffce] hover:text-[#FD7E15] text-white rounded-2xl text-center border-white">
+          <button className="border w-52  hover:bg-[#ffffff40] hover:text-[#ffffff] text-white rounded-2xl text-center border-white">
             <span className="text-xs">Conheça mais sobre a gente.</span>
             <br />
             <Link to="/about" className="flex relative justify-center">

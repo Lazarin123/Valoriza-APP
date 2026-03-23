@@ -11,6 +11,7 @@ import Footer from "../../components/Footer/Footer";
 import Header from "../../components/Header/Header";
 import Sidebar from "../../components/SideBar/SideBar";
 import aboutImage from "../../assets/images/sobreImage.jpg";
+import video from "../../assets/videos/AboutVideo.mp4";
 
 const AboutUs = () => {
   const whatsappNumber = "5511946701625";
@@ -33,7 +34,9 @@ const AboutUs = () => {
         {/* Conteúdo Principal */}
         <div className="main-content">
           <div className="image-wrapper">
-            <img src={aboutImage} alt="Sobre Nós" className="about-image" />
+            <video autoPlay loop muted playsInline>
+              <source src={video} type="video/mp4" />
+            </video>
           </div>
 
           <div className="text-content">
