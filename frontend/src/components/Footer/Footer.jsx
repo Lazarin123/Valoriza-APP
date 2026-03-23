@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { Mail, Linkedin, MessageSquareText } from "lucide-react";
 import "./Footer.scss";
 
@@ -29,9 +30,9 @@ const Footer = () => {
             <li>
               <a href="#inicio">› INÍCIO</a>
             </li>
-            <li>
+            <Link to="about">
               <a href="#sobre">› SOBRE NÓS</a>
-            </li>
+            </Link>
             <li>
               <a href="#plano">› PLANO PREMIUM</a>
             </li>

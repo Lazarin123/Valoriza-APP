@@ -95,14 +95,14 @@ const LoginPage = () => {
           <button className="border w-52  text-white rounded-2xl text-center border-white">
             <span className="text-xs">Conheça mais sobre a gente.</span>
             <br />
-            <div className="flex relative justify-center">
+            <Link to="/about" className="flex relative justify-center">
               <span className="text-base">Clique aqui</span>{" "}
               <img
                 className="rotate-90 absolute right-9 size-6"
                 src="\frontend\src\assets\icons\arrowup.png"
                 alt=""
               />
-            </div>
+            </Link>
           </button>
         </div>
       </div>

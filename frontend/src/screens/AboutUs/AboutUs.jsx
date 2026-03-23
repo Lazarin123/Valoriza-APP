@@ -9,16 +9,18 @@ import {
 } from "lucide-react";
 import "./AboutUs.scss";
 import Footer from "../../components/Footer/Footer";
+import Header from "../../layouts/Header";
 
 const AboutUs = () => {
   const whatsappNumber = "5511946701625";
   const message = encodeURIComponent(
-    "Olá! Gostaria de saber mais sobre como funciona a Valoriza.",
+    "Olá! Gostaria de saber mais sobre como funciona a Vallis Tech.",
   );
   const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${message}`;
 
   return (
     <div className="about-page-wrapper">
+      <Header />
       <section className="about-container">
         {/* Título com Background Decorativo */}
         <div className="title-wrapper">
