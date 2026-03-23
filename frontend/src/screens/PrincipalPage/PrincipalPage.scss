@@ -344,3 +344,91 @@ $bg-light: #F4F7FE;
 .empty-state {
   padding: 40px; text-align: center; color: #A3AED0; font-style: italic;
 }
+
+// --- SEÇÃO DE DICAS (ESTILO PREMIUM) ---
+.tips-container {
+  margin-top: 60px;
+  padding-bottom: 40px;
+  text-align: center;
+
+  .tips-header {
+    margin-bottom: 40px;
+    h2 { color: $navy; font-size: 32px; font-weight: 800; margin-bottom: 8px; }
+    p { color: $gray-blue; font-size: 16px; }
+  }
+}
+
+.tips-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+
+  @media (max-width: 1024px) { grid-template-columns: 1fr; }
+}
+
+.tip-card {
+  background: #1B254B; // Azul marinho escuro conforme imagem
+  border-radius: 24px;
+  padding: 30px;
+  position: relative;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: transform 0.3s ease;
+  border: 1px solid rgba(255,255,255,0.05);
+
+  &:hover { transform: translateY(-10px); }
+
+  .tip-badge {
+    position: absolute;
+    top: 20px; right: 20px;
+    background: rgba(255,255,255,0.1);
+    color: #A3AED0;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 11px;
+    font-weight: 600;
+  }
+
+  .tip-icon-box {
+    width: 60px; height: 60px;
+    background: rgba(255,255,255,0.05);
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 25px;
+    font-size: 28px;
+  }
+
+  h4 { color: white; font-size: 20px; margin-bottom: 5px; }
+  h5 { color: $orange-main; font-size: 13px; font-weight: 500; margin-bottom: 15px; }
+  p { color: #A3AED0; font-size: 14px; line-height: 1.6; margin-bottom: 15px; }
+
+  ul {
+    list-style: none; padding: 0; margin-bottom: 30px;
+    li {
+      color: #707EAE; font-size: 12px; margin-bottom: 8px;
+      display: flex; align-items: center;
+      &::before { content: "•"; color: $orange-main; margin-right: 8px; font-weight: bold; }
+    }
+  }
+
+  .btn-learn-more {
+    background: $orange-main;
+    color: white;
+    border: none;
+    padding: 14px;
+    border-radius: 15px;
+    font-weight: 700;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    width: 100%;
+    transition: filter 0.2s;
+    &:hover { filter: brightness(1.1); }
+  }
+}

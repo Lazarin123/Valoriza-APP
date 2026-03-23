@@ -29,7 +29,7 @@ const Footer = () => {
           <h3>MENU</h3>
           <ul>
             <li>
-              <Link to="/inicio">› INÍCIO</Link>
+              <Link to="/principal">› INÍCIO</Link>
             </li>
             <li to="about">
               <Link to="/about">› SOBRE NÓS</Link>
