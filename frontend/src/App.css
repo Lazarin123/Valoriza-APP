@@ -1,0 +1,16 @@
+@import "tailwindcss";
+
+.line_separator {
+  flex: 1;
+  border-top: 1px solid #000000; /* gray-300 to match gray-400 text */
+  margin: 0 1rem;
+}
+
+.display_bg {
+  background-image: url("assets\images\fundo-login3 1.svg");
+  background-size: cover;
+  background-position: center;
+  overflow: hidden;
+  height: 150vh;
+  width: 100%;
+}
