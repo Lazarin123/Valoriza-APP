@@ -5,7 +5,7 @@ import Header from "../../../components/Header/Header";
 import Footer from "../../../components/Footer/Footer";
 import "./ArtigoRenda.scss";
 import ImageArtigoPens from "../../../assets/images/ImagesArtigos/Images-Artigo-Pensamento.png";
-import ImageArtigoCresc from "../../../assets/images/ImagesArtigos/Images-Artigo-Crescimento.png";
+import ImageArtigoS from "../../../assets/images/ImagesArtigos/Images-Artigo-Dim.png";
 import ImageArtigoSaco from "../../../assets/images/ImagesArtigos/Images-Artigo-Saco.png";
 
 const ArtigoRenda = () => {
@@ -70,7 +70,7 @@ const ArtigoRenda = () => {
             <div className="placeholder-img side">
               <img
                 className="container__image"
-                src={ImageArtigoCresc}
+                src={ImageArtigoS}
                 alt="Imagem de crescimento"
               />
             </div>

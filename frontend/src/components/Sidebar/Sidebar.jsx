@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import {
   LayoutDashboard,
   Info,
-  Lightbulb,
+  Wallet,
   TrendingUp,
   Lock,
   LogOut,
@@ -19,7 +19,11 @@ const Sidebar = ({ isOpen, onClose }) => {
       path: "/principal",
     },
     { icon: <Info size={20} />, label: "Sobre Nós", path: "/about" },
-    { icon: <Lightbulb size={20} />, label: "Dicas", path: "/" },
+    {
+      icon: <Wallet size={20} />,
+      label: "Investimentos",
+      path: "/investimentos",
+    },
     { icon: <TrendingUp size={20} />, label: "Upgrade", path: "/upgrade" },
     { icon: <LogOut size={20} />, label: "Sair", path: "/" },
   ];
