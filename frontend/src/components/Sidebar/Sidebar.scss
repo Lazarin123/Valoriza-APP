@@ -1,0 +1,135 @@
+// Variáveis de Estilo
+$sidebar-width: 280px;
+$primary-blue: #1e3a8a;
+$light-blue: #f0f7ff;
+$text-gray: #64748b;
+$white: #ffffff;
+$transition: all 0.3s ease-in-out;
+
+.sidebar {
+  // 1. Posicionamento Estrutural
+  position: fixed;
+  top: 0;
+  left: -$sidebar-width; // Começa escondida fora da tela à esquerda
+  width: $sidebar-width;
+  height: 100vh;
+  background-color: $white;
+  z-index: 2000; // Garante que fica acima do Header (que é 1000)
+  display: flex;
+  flex-direction: column;
+  padding: 30px 24px;
+  border-right: 1px solid #f1f5f9;
+  box-shadow: 4px 0 15px rgba(0, 0, 0, 0.05);
+  
+  // 2. Animação de Deslize
+  transition: $transition;
+
+  // Classe ativada pelo React quando isOpen for true
+  &--open {
+    left: 0; // Desliza para dentro da tela
+  }
+
+  // 3. Logo Interna
+  &__logo-container {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 40px;
+  }
+
+  &__logo-img {
+    height: 55px;
+    width: auto;
+  }
+
+  &__logo-text {
+    font-size: 1.1rem;
+    font-weight: 800;
+    color: $primary-blue;
+    font-style: italic;
+    letter-spacing: -0.5px;
+  }
+
+  // 4. Navegação
+  &__nav {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    flex-grow: 1; // Empurra o card de upgrade para o fim
+  }
+
+  &__link {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 16px;
+    text-decoration: none;
+    color: $text-gray;
+    font-weight: 500;
+    border-radius: 12px;
+    transition: $transition;
+
+    &:hover {
+      background-color: $light-blue;
+      color: $primary-blue;
+
+      .sidebar__link-icon {
+        color: $primary-blue;
+      }
+    }
+
+    &-icon {
+      display: flex;
+      align-items: center;
+      color: $text-gray;
+      transition: $transition;
+    }
+
+    &-text {
+      font-size: 0.95rem;
+    }
+  }
+
+  // 5. Card de Upgrade (Fundo do Menu)
+  &__upgrade-card {
+    background: linear-gradient(135deg, $primary-blue 0%, #3b82f6 100%);
+    border-radius: 20px;
+    padding: 24px;
+    text-align: center;
+    color: $white;
+    margin-top: auto;
+
+    h4 {
+      font-size: 1rem;
+      margin: 0 0 8px 0;
+      font-weight: 700;
+    }
+
+    p {
+      font-size: 0.8rem;
+      line-height: 1.4;
+      margin: 0;
+      opacity: 0.9;
+    }
+  }
+}
+
+// 6. Overlay (Fundo escuro quando o menu abre)
+.sidebar-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(2px); // Efeito de desfoque moderno
+  z-index: 1999; // Abaixo da sidebar, acima do resto
+  opacity: 0;
+  visibility: hidden;
+  transition: $transition;
+
+  &--open {
+    opacity: 1;
+    visibility: visible;
+  }
+}

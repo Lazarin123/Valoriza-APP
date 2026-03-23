@@ -90,7 +90,7 @@ const Footer = () => {
           <span className="tech-icon js">JS</span>
           <span className="tech-icon react">REACT</span>
           <span className="tech-icon scss">SCSS</span>
-          <span className="tech-icon sql">SQL</span>
+          <span className="tech-icon sql">NSQL</span>
           <span className="tech-icon node">NODE</span>
         </div>
       </div>

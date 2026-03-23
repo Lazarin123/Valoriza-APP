@@ -1,4 +1,3 @@
-import React from "react";
 import {
   Target,
   Eye,
@@ -9,7 +8,8 @@ import {
 } from "lucide-react";
 import "./AboutUs.scss";
 import Footer from "../../components/Footer/Footer";
-import Header from "../../layouts/Header";
+import Header from "../../components/Header/Header";
+import Sidebar from "../../components/SideBar/SideBar";
 
 const AboutUs = () => {
   const whatsappNumber = "5511946701625";
@@ -21,10 +21,11 @@ const AboutUs = () => {
   return (
     <div className="about-page-wrapper">
       <Header />
+
       <section className="about-container">
         {/* Título com Background Decorativo */}
         <div className="title-wrapper">
-          <h2 className="title-bg">Empresa</h2>
+          <h2 className="title-bg">Conheça a Empresa</h2>
           <h3 className="title-main">
             Conheça a Empresa
             <span className="title-underline"></span>
