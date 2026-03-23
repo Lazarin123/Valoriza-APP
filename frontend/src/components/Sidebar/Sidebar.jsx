@@ -13,11 +13,14 @@ import logoIcon from "../../assets/images/ValorizaApp.png"; // Caminho da logo
 
 const Sidebar = ({ isOpen, onClose }) => {
   const menuItems = [
-    { icon: <LayoutDashboard size={20} />, label: "Dashboard", path: "/" },
+    {
+      icon: <LayoutDashboard size={20} />,
+      label: "Dashboard",
+      path: "/principal",
+    },
     { icon: <Info size={20} />, label: "Sobre Nós", path: "/about" },
-    { icon: <Lightbulb size={20} />, label: "Dicas", path: "/dicas" },
+    { icon: <Lightbulb size={20} />, label: "Dicas", path: "/" },
     { icon: <TrendingUp size={20} />, label: "Upgrade", path: "/upgrade" },
-    { icon: <Lock size={20} />, label: "Entrar", path: "/" },
     { icon: <LogOut size={20} />, label: "Sair", path: "/" },
   ];
 
@@ -46,7 +49,7 @@ const Sidebar = ({ isOpen, onClose }) => {
               key={index}
               to={item.path}
               className="sidebar__link"
-              onClick={onClose} // Fecha a sidebar ao clicar em um link
+              onClick={onClose}
             >
               <span className="sidebar__link-icon">{item.icon}</span>
               <span className="sidebar__link-text">{item.label}</span>

@@ -29,13 +29,13 @@ const Footer = () => {
           <h3>MENU</h3>
           <ul>
             <li>
-              <a href="#inicio">› INÍCIO</a>
+              <Link to="/inicio">› INÍCIO</Link>
             </li>
             <li to="about">
-              <a href="#sobre">› SOBRE NÓS</a>
+              <Link to="/about">› SOBRE NÓS</Link>
             </li>
             <li>
-              <a href="#plano">› PLANO PREMIUM</a>
+              <Link to="/plano">› PLANO PREMIUM</Link>
             </li>
           </ul>
         </div>

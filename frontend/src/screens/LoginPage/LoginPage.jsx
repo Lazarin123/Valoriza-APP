@@ -11,7 +11,7 @@ const LoginPage = () => {
               Olá, Seja Bem Vindo de volta!
             </h1>
             <p className="text-sm text-center text-[#A3AED0]">
-              Transforme sua jornada Financeira
+              Transforme sua jornada Financeira!
             </p>
             <button className="rounded-2xl h-12 w-full flex flex-row justify-center items-center gap-3 text-base font-bold shadow-black bg-[#f1f1f1]">
               <img
@@ -55,9 +55,11 @@ const LoginPage = () => {
                 required
               />
             </div>
-            <button className="border w-full rounded-2xl shadow-2xl bg-[#FD7E15] text-white h-12">
-              Entrar
-            </button>
+            <Link to="/principal">
+              <button className="border w-full rounded-2xl hover:bg-[#e66d0d] shadow-2xl bg-[#FD7E15] text-white h-12 cursor-pointer">
+                Entrar
+              </button>
+            </Link>
             <p className="text-sm text-start text-[#A3AED0]">
               Ainda não tem uma conta?{" "}
               <span className="text-[#FD7E15]">
@@ -81,7 +83,7 @@ const LoginPage = () => {
           <p className="text-sm mb-4 text-white text-center">
             Seu dinheiro merece o nosso cuidado!
           </p>
-          <button className="border w-52  text-white rounded-2xl text-center border-white">
+          <button className="border w-52  hover:bg-[#ffffffce] hover:text-[#FD7E15] text-white rounded-2xl text-center border-white">
             <span className="text-xs">Conheça mais sobre a gente.</span>
             <br />
             <Link to="/about" className="flex relative justify-center">

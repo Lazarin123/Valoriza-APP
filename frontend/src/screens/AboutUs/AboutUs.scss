@@ -3,7 +3,7 @@ $color-primary: #2d3178;    // Azul escuro
 $color-secondary: #00d9c0;  // Verde água
 $color-bg-light: #e9efff;   // Azul clarinho dos cards
 $color-text-gray: #666666;
-$color-ghost-text: #f4f4f4;
+$color-ghost-text: #cfcfcfc4;
 
 // 2. Mixins para facilitar o Flex/Grid
 @mixin flex-center {
@@ -50,14 +50,6 @@ $color-ghost-text: #f4f4f4;
       font-size: 2rem;
       font-weight: 800;
       text-transform: uppercase;
-
-      .title-underline {
-        display: block;
-        width: 60px;
-        height: 4px;
-        background-color: $color-secondary;
-        margin: 12px auto 0;
-      }
     }
   }
 

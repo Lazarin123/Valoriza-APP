@@ -80,7 +80,7 @@ const RegistrationPage = () => {
               />
             </div>
 
-            <button className="border w-full rounded-2xl shadow-2xl bg-[#FD7E15] text-white h-12">
+            <button className="border w-full hover:bg-[#e66d0d] rounded-2xl shadow-2xl bg-[#FD7E15] text-white h-12 cursor-pointer">
               Entrar
             </button>
             <p className="text-sm text-start text-[#A3AED0]">
@@ -106,7 +106,7 @@ const RegistrationPage = () => {
           <p className="text-sm mb-4 text-white text-center">
             Seu dinheiro merece o nosso cuidado!
           </p>
-          <button className="border w-52  text-white rounded-2xl text-center border-white">
+          <button className="border w-52 hover:bg-[#ffffffce] hover:text-[#FD7E15]  text-white rounded-2xl text-center border-white">
             <span className="text-xs">Conheça mais sobre a gente.</span>
             <br />
             <Link to="/about" className="flex relative justify-center">

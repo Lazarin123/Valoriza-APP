@@ -1,0 +1,365 @@
+// Definições de Cores e Estilos Base
+$navy: #2B3674;
+$gray-blue: #A3AED0;
+$green-success: #05CD99;
+$red-danger: #EE5D50;
+$orange-main: #FD7E15;
+$bg-light: #F4F7FE;
+
+.dashboard-wrapper {
+  background-color: $bg-light;
+  min-height: 100vh;
+  padding: 40px;
+  font-family: 'DM Sans', sans-serif;
+
+  .content-container {
+    max-width: 1300px;
+    margin: 0 auto;
+  }
+}
+
+// Cabeçalho
+.main-header {
+  margin-bottom: 30px;
+  h1 {
+    color: $navy;
+    font-size: 34px;
+    font-weight: 700;
+    .sub {
+      color: $gray-blue;
+      font-size: 14px;
+      font-weight: 400;
+      margin-left: 10px;
+    }
+  }
+}
+
+// Grid de Cards Superiores (3 Colunas)
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  margin-bottom: 30px;
+}
+
+// --- NOVO LAYOUT DE DUAS COLUNAS ---
+.main-layout-grid {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr; // Esquerda maior para lista, direita para gráfico
+  gap: 25px;
+  align-items: start;
+}
+
+.stat-card {
+  background: white;
+  border-radius: 20px;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.02);
+
+  // Estilo do campo de edição de salário visível
+  .edit-box-visible {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    
+    .main-input {
+      border: 2px solid $bg-light;
+      border-radius: 8px;
+      padding: 8px;
+      font-size: 20px;
+      font-weight: 700;
+      color: $navy;
+      outline: none;
+      &:focus { border-color: $orange-main; }
+    }
+    button {
+      margin-top: 5px;
+      background: $navy;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+  }
+
+  .icon {
+    width: 56px;
+    height: 56px;
+    background: #F4F7FE;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    &.blue { color: #4318FF; }
+    &.green { color: $green-success; }
+  }
+
+  .details {
+    p { color: $gray-blue; font-size: 14px; margin: 0; }
+    h3 { 
+      color: $navy; font-size: 24px; font-weight: 700; margin: 4px 0; 
+      cursor: pointer;
+      &:hover { color: $orange-main; }
+    }
+    .tag { color: $green-success; font-size: 12px; font-weight: 700; }
+  }
+}
+
+// Estilo dos Relatórios e Card do Gráfico
+.report-card, .chart-card {
+  background: white;
+  border-radius: 20px;
+  padding: 25px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.02);
+
+  h4 { 
+    color: $navy; 
+    font-size: 18px; 
+    font-weight: 700; 
+    margin: 0 0 20px 0; 
+  }
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 25px;
+}
+
+// Lista de Itens
+.list-container {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.item-row {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 10px 0;
+
+  .name {
+    color: $navy;
+    font-weight: 500;
+    min-width: 120px;
+  }
+
+  .spacer-line {
+    flex-grow: 1;
+    border-bottom: 1px dashed #E0E5F2;
+    height: 1px;
+    margin-bottom: -10px;
+  }
+
+  .price {
+    font-weight: 700;
+    min-width: 150px;
+    &.danger { color: $red-danger; }
+    &.success { color: $green-success; }
+  }
+
+  .action-btns {
+    display: flex;
+    gap: 10px;
+    .text-btn {
+      background: none; border: none; color: $gray-blue;
+      font-size: 12px; cursor: pointer;
+      &:hover { color: $navy; }
+      &.delete { color: $red-danger; }
+    }
+  }
+}
+
+// Gráfico Lateral
+.chart-container {
+  width: 100%;
+  height: 250px;
+  margin-top: 10px;
+}
+
+// Botões e Toggles
+.btn-main-orange {
+  background: $orange-main;
+  color: white;
+  border: none;
+  padding: 12px 30px;
+  border-radius: 12px;
+  font-weight: 700;
+  margin-top: 20px;
+  cursor: pointer;
+  width: 100%;
+  transition: transform 0.2s;
+  &:active { transform: scale(0.98); }
+}
+
+.switch {
+  width: 90px;
+  height: 32px;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  padding: 4px;
+  cursor: pointer;
+  position: relative;
+  transition: 0.3s;
+
+  &.off { background: $red-danger; justify-content: flex-start; }
+  &.on { background: $green-success; justify-content: flex-end; }
+
+  .handle {
+    width: 24px;
+    height: 24px;
+    background: white;
+    border-radius: 50%;
+    z-index: 2;
+  }
+
+  .label {
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    color: white;
+    font-size: 11px;
+    font-weight: 700;
+  }
+}
+
+.modal-overlay {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  backdrop-filter: blur(4px);
+
+  &.full { background: white; } // O "Ver Todos" pode ser tela cheia se preferir
+}
+
+.modal-content {
+  background: white;
+  padding: 30px;
+  border-radius: 20px;
+  width: 400px;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+
+  &.ver-todos { width: 80%; max-width: 800px; }
+
+  .modal-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    h3 { color: $navy; margin: 0; }
+  }
+
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    label { font-size: 14px; color: $gray-blue; font-weight: 500; }
+    input {
+      padding: 12px;
+      border: 1px solid #E0E5F2;
+      border-radius: 12px;
+      outline: none;
+      &:focus { border-color: $orange-main; }
+    }
+  }
+}
+
+.btn-save {
+  background: $orange-main;
+  color: white;
+  border: none;
+  padding: 15px;
+  border-radius: 12px;
+  font-weight: 700;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.full-item-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 15px;
+  border-bottom: 1px solid #F4F7FE;
+  align-items: center;
+  
+  .actions {
+    display: flex;
+    gap: 15px;
+    button { 
+      background: none; border: none; cursor: pointer; color: $navy;
+      &.del { color: $red-danger; }
+    }
+  }
+}
+
+// Cores base do projeto (Vallis Tech Style)
+$navy: #1B2559;
+$orange-main: #FF8A00;
+$green-success: #05CD99;
+$red-danger: #EE5D50;
+
+.toggle-switch {
+  width: 90px;
+  height: 28px;
+  background: #F4F7FE;
+  border-radius: 20px;
+  position: relative;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  padding: 0 8px;
+  transition: 0.3s;
+  border: 1px solid #E0E5F2;
+
+  .thumb {
+    width: 22px;
+    height: 22px;
+    background: $red-danger;
+    border-radius: 50%;
+    position: absolute;
+    left: 3px;
+    transition: 0.3s cubic-bezier(0.18, 0.89, 0.35, 1.15);
+  }
+
+  .label-text {
+    font-size: 10px;
+    font-weight: 700;
+    margin-left: 28px;
+    color: $red-danger;
+    text-transform: uppercase;
+  }
+
+  &.active {
+    background: rgba($green-success, 0.1);
+    border-color: $green-success;
+    .thumb {
+      left: 65px;
+      background: $green-success;
+    }
+    .label-text {
+      margin-left: 8px;
+      color: $green-success;
+    }
+  }
+}
+
+.edit-link {
+  background: none; border: none; color: $orange-main; 
+  font-size: 12px; cursor: pointer; font-weight: 600;
+  &:hover { text-decoration: underline; }
+}
+
+.empty-state {
+  padding: 40px; text-align: center; color: #A3AED0; font-style: italic;
+}

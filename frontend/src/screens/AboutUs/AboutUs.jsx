@@ -27,10 +27,7 @@ const AboutUs = () => {
         {/* Título com Background Decorativo */}
         <div className="title-wrapper">
           <h2 className="title-bg">Conheça a Empresa</h2>
-          <h3 className="title-main">
-            Conheça a Empresa
-            <span className="title-underline"></span>
-          </h3>
+          <h3 className="title-main">Conheça a Empresa</h3>
         </div>
 
         {/* Conteúdo Principal */}
