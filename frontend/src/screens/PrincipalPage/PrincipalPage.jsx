@@ -1,4 +1,4 @@
-import React, { useState, useMemo } from "react";
+import React, { useState, useMemo, useEffect } from "react";
 import {
   Zap,
   Trash2,
@@ -21,10 +21,25 @@ import {
 import "./PrincipalPage.scss";
 
 const PrincipalPage = () => {
-  const [salario, setSalario] = useState(0);
-  const [gastosFixos, setGastosFixos] = useState([]);
+  // IDENTIFICADOR ÚNICO (Quando tiver o login, esse ID virá da API)
+  const userId = "samuel_vallis_user";
 
-  // Estados de Controle de Modais
+  const [userName, setUserName] = useState(() => {
+    const savedName = localStorage.getItem(`${userId}_name`);
+    return savedName || "Usuário"; // "Usuário" é o padrão caso não tenha nada salvo
+  });
+
+  // ESTADOS INICIALIZADOS COM O LOCALSTORAGE (Para não começar do zero se já houver dados)
+  const [salario, setSalario] = useState(() => {
+    const savedSalario = localStorage.getItem(`${userId}_salario`);
+    return savedSalario ? parseFloat(savedSalario) : 0;
+  });
+
+  const [gastosFixos, setGastosFixos] = useState(() => {
+    const savedGastos = localStorage.getItem(`${userId}_gastos`);
+    return savedGastos ? JSON.parse(savedGastos) : [];
+  });
+
   const [showModalGasto, setShowModalGasto] = useState(false);
   const [showModalSalario, setShowModalSalario] = useState(false);
   const [showVerTodos, setShowVerTodos] = useState(false);
@@ -32,6 +47,15 @@ const PrincipalPage = () => {
   const [editandoGastoId, setEditandoGastoId] = useState(null);
   const [formData, setFormData] = useState({ nome: "", valor: "", dia: "" });
   const [tempSalario, setTempSalario] = useState("");
+
+  // SALVAMENTO AUTOMÁTICO (Sempre que mudar o salário ou os gastos)
+  useEffect(() => {
+    localStorage.setItem(`${userId}_salario`, salario);
+  }, [salario]);
+
+  useEffect(() => {
+    localStorage.setItem(`${userId}_gastos`, JSON.stringify(gastosFixos));
+  }, [gastosFixos]);
 
   const totais = useMemo(() => {
     const pago = gastosFixos
@@ -91,7 +115,7 @@ const PrincipalPage = () => {
       <main className="content-container">
         <header className="main-header">
           <h1>
-            Olá, Samuel{" "}
+            Olá, {userName}{" "}
             <span className="sub">é ótimo ter você aqui com a gente!</span>
           </h1>
         </header>
@@ -107,7 +131,6 @@ const PrincipalPage = () => {
                 R${" "}
                 {salario.toLocaleString("pt-BR", { minimumFractionDigits: 2 })}
               </h3>
-              {/* MUDANÇA 1: BOTAO EDITAR SALARIO FUNCIONAL */}
               <button
                 className="edit-link"
                 onClick={() => {
@@ -124,7 +147,7 @@ const PrincipalPage = () => {
               <DollarSign size={20} />
             </div>
             <div className="details">
-              <p>Gastos</p>
+              <p>Gastos Pagos</p>
               <h3 className="danger">
                 -R${" "}
                 {totais.pago.toLocaleString("pt-BR", {
@@ -138,7 +161,7 @@ const PrincipalPage = () => {
               <TrendingUp size={20} />
             </div>
             <div className="details">
-              <p>Você Economizou</p>
+              <p>Saldo Restante</p>
               <h3 className="success">
                 R${" "}
                 {totais.economizado.toLocaleString("pt-BR", {
@@ -153,7 +176,6 @@ const PrincipalPage = () => {
           <section className="report-card">
             <div className="card-header">
               <h4>Relatório de gastos fixos</h4>
-              {/* MUDANÇA 2: BOTAO ADICIONAR GASTO FUNCIONAL */}
               <button
                 className="add-btn-clean"
                 onClick={() => handleOpenGasto()}
