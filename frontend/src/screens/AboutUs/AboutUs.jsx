@@ -1,4 +1,3 @@
-import React from "react";
 import {
   Target,
   Eye,
@@ -9,7 +8,10 @@ import {
 } from "lucide-react";
 import "./AboutUs.scss";
 import Footer from "../../components/Footer/Footer";
-import Header from "../../layouts/Header";
+import Header from "../../components/Header/Header";
+import Sidebar from "../../components/SideBar/SideBar";
+import aboutImage from "../../assets/images/sobreImage.jpg";
+import video from "../../assets/videos/AboutVideo.mp4";
 
 const AboutUs = () => {
   const whatsappNumber = "5511946701625";
@@ -21,24 +23,20 @@ const AboutUs = () => {
   return (
     <div className="about-page-wrapper">
       <Header />
+
       <section className="about-container">
         {/* Título com Background Decorativo */}
         <div className="title-wrapper">
-          <h2 className="title-bg">Empresa</h2>
-          <h3 className="title-main">
-            Conheça a Empresa
-            <span className="title-underline"></span>
-          </h3>
+          <h2 className="title-bg">Conheça a Empresa</h2>
+          <h3 className="title-main">Conheça a Empresa</h3>
         </div>
 
         {/* Conteúdo Principal */}
         <div className="main-content">
           <div className="image-wrapper">
-            <img
-              src="../../assets/images/foto sobre nós.jpg"
-              alt="Dashboard Valoriza"
-              className="about-image"
-            />
+            <video autoPlay loop muted playsInline>
+              <source src={video} type="video/mp4" />
+            </video>
           </div>
 
           <div className="text-content">

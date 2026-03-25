@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { Mail, Linkedin, MessageSquareText } from "lucide-react";
 import "./Footer.scss";
+import footerImage from "../../assets/images/ValorizaApp.png";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -19,7 +20,7 @@ const Footer = () => {
         {/* Lado Esquerdo: Logo e Slogan */}
         <div className="footer-brand">
           <div className="logo-box">
-            <img src="../../assets/images/ValorizaApp.png" alt="Valoriza App" />
+            <img src={footerImage} alt="Sobre Nós" />
           </div>
           <p>Mais controle. Mais clareza. Mais resultados.</p>
         </div>
@@ -28,13 +29,13 @@ const Footer = () => {
           <h3>MENU</h3>
           <ul>
             <li>
-              <a href="#inicio">› INÍCIO</a>
+              <Link to="/principal">› INÍCIO</Link>
             </li>
             <li to="about">
-              <a href="#sobre">› SOBRE NÓS</a>
+              <Link to="/about">› SOBRE NÓS</Link>
             </li>
             <li>
-              <a href="#plano">› PLANO PREMIUM</a>
+              <Link to="/upgrade">› PLANO PREMIUM</Link>
             </li>
           </ul>
         </div>
@@ -90,7 +91,7 @@ const Footer = () => {
           <span className="tech-icon js">JS</span>
           <span className="tech-icon react">REACT</span>
           <span className="tech-icon scss">SCSS</span>
-          <span className="tech-icon sql">SQL</span>
+          <span className="tech-icon sql">NSQL</span>
           <span className="tech-icon node">NODE</span>
         </div>
       </div>

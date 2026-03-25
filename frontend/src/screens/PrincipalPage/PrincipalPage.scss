@@ -1,0 +1,566 @@
+// Definições de Cores e Estilos Base
+$navy: #2B3674;
+$gray-blue: #A3AED0;
+$green-success: #05CD99;
+$red-danger: #EE5D50;
+$orange-main: #FD7E15;
+$bg-light: #F4F7FE;
+
+/* =======================================================
+   CÓDIGO AGRESSIVO PARA OCULTAR A BARRA DE ROLAGEM GLOBAL
+   ======================================================= */
+html, body, * {
+  -ms-overflow-style: none !important;  /* Internet Explorer e Edge */
+  scrollbar-width: none !important;     /* Firefox */
+}
+
+html::-webkit-scrollbar, 
+body::-webkit-scrollbar, 
+*::-webkit-scrollbar {
+  display: none !important;             /* Chrome, Safari e Opera */
+}
+/* ======================================================= */
+
+.dashboard-wrapper {
+  background-color: $bg-light;
+  min-height: 100vh;
+  padding: 40px;
+  font-family: 'DM Sans', sans-serif;
+
+  @media (max-width: 768px) {
+    padding: 20px 15px;
+  }
+
+  .content-container {
+    max-width: 1300px;
+    margin: 0 auto;
+  }
+}
+
+// Cabeçalho
+.main-header {
+  margin-bottom: 30px;
+  h1 {
+    color: $navy;
+    font-size: 34px;
+    font-weight: 700;
+    
+    @media (max-width: 480px) {
+      font-size: 26px;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .sub {
+      color: $gray-blue;
+      font-size: 14px;
+      font-weight: 400;
+      margin-left: 10px;
+
+      @media (max-width: 480px) {
+        margin-left: 0;
+        margin-top: 5px;
+      }
+    }
+  }
+}
+
+// Grid de Cards Superiores (3 Colunas)
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  margin-bottom: 30px;
+
+  @media (max-width: 1024px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media (max-width: 650px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+// --- LAYOUT DE DUAS COLUNAS ---
+.main-layout-grid {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr; 
+  gap: 25px;
+  align-items: start;
+
+  @media (max-width: 1024px) {
+    grid-template-columns: 1fr; // Empilha no tablet/mobile
+  }
+}
+
+.stat-card {
+  background: white;
+  border-radius: 20px;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.02);
+
+  .edit-box-visible {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    
+    .main-input {
+      border: 2px solid $bg-light;
+      border-radius: 8px;
+      padding: 8px;
+      font-size: 20px;
+      font-weight: 700;
+      color: $navy;
+      outline: none;
+      &:focus { border-color: $orange-main; }
+    }
+    button {
+      margin-top: 5px;
+      background: $navy;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+  }
+
+  .icon {
+    width: 56px;
+    height: 56px;
+    background: #F4F7FE;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    flex-shrink: 0; // Impede o ícone de amassar no mobile
+    &.blue { color: #4318FF; }
+    &.green { color: $green-success; }
+  }
+
+  .details {
+    p { color: $gray-blue; font-size: 14px; margin: 0; }
+    h3 { 
+      color: $navy; font-size: 24px; font-weight: 700; margin: 4px 0; 
+      cursor: pointer;
+      &:hover { color: $orange-main; }
+      
+      @media (max-width: 480px) {
+        font-size: 20px;
+      }
+    }
+    .tag { color: $green-success; font-size: 12px; font-weight: 700; }
+  }
+}
+
+.report-card, .chart-card {
+  background: white;
+  border-radius: 20px;
+  padding: 25px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.02);
+
+  @media (max-width: 480px) {
+    padding: 15px;
+  }
+
+  h4 { 
+    color: $navy; 
+    font-size: 18px; 
+    font-weight: 700; 
+    margin: 0 0 20px 0; 
+  }
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 25px;
+  
+  @media (max-width: 480px) {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+}
+
+.list-container {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.item-row {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 10px 0;
+
+  @media (max-width: 600px) {
+    flex-wrap: wrap; // Permite que o toggle vá para baixo se necessário
+    justify-content: space-between;
+  }
+
+  .name {
+    color: $navy;
+    font-weight: 500;
+    min-width: 100px;
+  }
+
+  .spacer-line {
+    flex-grow: 1;
+    border-bottom: 1px dashed #E0E5F2;
+    height: 1px;
+    margin-bottom: -10px;
+
+    @media (max-width: 600px) {
+      display: none; // Remove a linha pontilhada em telas muito pequenas
+    }
+  }
+
+  .price {
+    font-weight: 700;
+    min-width: 100px;
+    &.danger { color: $red-danger; }
+    &.success { color: $green-success; }
+    
+    @media (max-width: 600px) {
+      min-width: auto;
+    }
+  }
+}
+
+.chart-container {
+  width: 100%;
+  height: 250px;
+  margin-top: 10px;
+}
+
+.btn-main-orange {
+  background: $orange-main;
+  color: white;
+  border: none;
+  padding: 12px 30px;
+  border-radius: 12px;
+  font-weight: 700;
+  margin-top: 20px;
+  cursor: pointer;
+  width: 100%;
+  transition: transform 0.2s;
+  &:active { transform: scale(0.98); }
+}
+
+.modal-overlay {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  backdrop-filter: blur(4px);
+  padding: 20px; // Espaço para o modal não grudar na borda do celular
+}
+
+.modal-content {
+  background: white;
+  padding: 30px;
+  border-radius: 20px;
+  width: 100%;
+  max-width: 400px;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+
+  @media (max-width: 480px) {
+    padding: 20px;
+  }
+
+  &.ver-todos { 
+    max-width: 800px; 
+    max-height: 90vh;
+    overflow-y: auto;
+  }
+
+  .modal-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    h3 { color: $navy; margin: 0; }
+  }
+
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    input {
+      padding: 12px;
+      border: 1px solid #E0E5F2;
+      border-radius: 12px;
+      font-size: 16px; // Evita zoom automático no iOS
+    }
+  }
+}
+
+.toggle-switch {
+  width: 90px;
+  height: 28px;
+  background: #F4F7FE;
+  border-radius: 20px;
+  position: relative;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  padding: 0 8px;
+  transition: 0.3s;
+  border: 1px solid #E0E5F2;
+  flex-shrink: 0;
+
+  .thumb {
+    width: 22px;
+    height: 22px;
+    background: $red-danger;
+    border-radius: 50%;
+    position: absolute;
+    left: 3px;
+    transition: 0.3s cubic-bezier(0.18, 0.89, 0.35, 1.15);
+  }
+
+  .label-text {
+    font-size: 10px;
+    font-weight: 700;
+    margin-left: 28px;
+    color: $red-danger;
+    text-transform: uppercase;
+  }
+
+  &.active {
+    background: rgba($green-success, 0.1);
+    border-color: $green-success;
+    .thumb {
+      left: 63px;
+      background: $green-success;
+    }
+    .label-text {
+      margin-left: 8px;
+      color: $green-success;
+    }
+  }
+}
+
+.edit-link {
+  background: none; border: none; color: $orange-main; 
+  font-size: 12px; cursor: pointer; font-weight: 600;
+  &:hover { text-decoration: underline; }
+}
+
+.empty-state {
+  padding: 40px; text-align: center; color: #A3AED0; font-style: italic;
+}
+
+// --- SEÇÃO DE DICAS (ESTILO PREMIUM) ---
+.tips-container {
+  margin-top: 60px;
+  padding-bottom: 40px;
+  text-align: center;
+
+  .tips-header {
+    margin-bottom: 40px;
+    h2 { color: $navy; font-size: 32px; font-weight: 800; margin-bottom: 8px; }
+    p { color: $gray-blue; font-size: 16px; }
+  }
+}
+
+.tips-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+
+  @media (max-width: 1024px) { grid-template-columns: 1fr; }
+}
+
+.tip-card {
+  background: #1B254B; // Azul marinho escuro conforme imagem
+  border-radius: 24px;
+  padding: 30px;
+  position: relative;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: transform 0.3s ease;
+  border: 1px solid rgba(255,255,255,0.05);
+
+  &:hover { transform: translateY(-10px); }
+
+  .tip-badge {
+    position: absolute;
+    top: 20px; right: 20px;
+    background: rgba(255,255,255,0.1);
+    color: #A3AED0;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 11px;
+    font-weight: 600;
+  }
+
+  .tip-icon-box {
+    width: 60px; height: 60px;
+    background: rgba(255,255,255,0.05);
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 25px;
+    font-size: 28px;
+  }
+
+  h4 { color: white; font-size: 20px; margin-bottom: 5px; }
+  h5 { color: $orange-main; font-size: 13px; font-weight: 500; margin-bottom: 15px; }
+  p { color: #A3AED0; font-size: 14px; line-height: 1.6; margin-bottom: 15px; }
+
+  ul {
+    list-style: none; padding: 0; margin-bottom: 30px;
+    li {
+      color: #707EAE; font-size: 12px; margin-bottom: 8px;
+      display: flex; align-items: center;
+      &::before { content: "•"; color: $orange-main; margin-right: 8px; font-weight: bold; }
+    }
+  }
+
+  .btn-learn-more {
+    background: $orange-main;
+    color: white;
+    border: none;
+    padding: 14px;
+    border-radius: 15px;
+    font-weight: 700;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    width: 100%;
+    transition: filter 0.2s;
+    &:hover { filter: brightness(1.1); }
+  }
+}
+
+/* ========================================================
+   ADICIONADO PARA O DARK MODE (SOBREPÕE APENAS SE ATIVO)
+   ======================================================== */
+
+.dark-mode-btn {
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: $orange-main;
+  color: white;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  z-index: 9999;
+  transition: transform 0.2s;
+  
+  &:hover {
+    transform: scale(1.1);
+  }
+}
+
+body.dark-theme {
+  .dashboard-wrapper {
+    background-color: #0b1437; // Fundo geral do site 
+    color: white; 
+  }
+
+  .stat-card,
+  .report-card,
+  .chart-card,
+  .modal-content {
+    background-color: #1B254B; // Fundo dos cartões e modais
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.4);
+  }
+
+  // Títulos principais
+  .main-header h1,
+  h2,
+  h4,
+  .name,
+  .modal-content h3 {
+    color: #ffffff;
+  }
+
+  // Textos secundários e valores monetários (h3)
+  .details {
+    h3 {
+      color: $orange-main;
+      font-size: 24px;
+      font-weight: 700;
+      margin: 4px 0;
+      cursor: pointer;
+
+      &:hover {
+        color: $navy;
+      }
+    }
+    
+    p {
+      color: #ffffff;
+    }
+  }
+
+  .tips-header p,
+  .date-label {
+    color: #ffffff;
+  }
+
+  // Cor do ícone circular nos stat-cards
+  .icon {
+    background: rgb(136, 136, 136);
+  }
+
+  // Linha tracejada da lista
+  .spacer-line {
+    border-bottom-color: #072599;
+  }
+
+  // Fundo e borda do Toggle Switch de pagamento
+  .toggle-switch {
+    background: #0b1437;
+    border-color: #1b254b;
+  }
+
+  // Inputs dos modais
+  input {
+    background: #49599d;
+    border-color: #1b254b;
+    color: white;
+    
+    &::placeholder {
+      color: #ffffff;
+    }
+  }
+
+  // Cores do texto no modal Ver Todos
+  .full-item-row span {
+    color: #ffffff;
+  }
+
+  // Ícone de fechar modal (X)
+  .modal-header svg {
+    color: #ffffff;
+  }
+
+  // Botão "Entrada"
+  .edit-link {
+    color: #ffffff;
+  }
+}
