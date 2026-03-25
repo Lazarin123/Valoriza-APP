@@ -1,0 +1,228 @@
+// Variáveis de Cores e Tipografia
+$color-brand-primary: #1e3a8a; // Navy Blue
+$color-brand-hover: #1e40af;
+$color-text-main: #1f2937;
+$color-text-muted: #4b5563;
+$color-bg-light: #f9fafb;
+$color-white: #ffffff;
+$color-border: #e5e7eb;
+$font-family-base: 'Inter', system-ui, sans-serif;
+
+// Block principal
+.upgrade-screen {
+  font-family: $font-family-base;
+  background-color: $color-bg-light;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  &__header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 4rem;
+    background-color: $color-white;
+    border-bottom: 1px solid $color-border;
+  }
+
+  &__logo {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-weight: 700;
+    font-size: 1.25rem;
+    color: $color-brand-primary;
+
+    &-icon {
+      background-color: $color-brand-primary;
+      color: $color-white;
+      padding: 0.2rem 0.6rem;
+      border-radius: 4px;
+    }
+  }
+
+  &__nav {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+
+    &-link {
+      text-decoration: none;
+      color: $color-text-main;
+      font-weight: 500;
+      transition: color 0.2s ease;
+
+      &:hover {
+        color: $color-brand-primary;
+      }
+    }
+  }
+
+  &__login-btn {
+    padding: 0.5rem 1.25rem;
+    border: 1px solid $color-border;
+    border-radius: 6px;
+    background: transparent;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background-color 0.2s ease;
+
+    &:hover {
+      background-color: $color-bg-light;
+    }
+  }
+
+  &__main {
+    text-align: center;
+    padding: 4rem 2rem;
+    width: 100%;
+    max-width: 1000px;
+  }
+
+  &__title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: $color-text-main;
+    margin-bottom: 0.75rem;
+  }
+
+  &__subtitle {
+    font-size: 1.125rem;
+    color: $color-text-muted;
+    margin-bottom: 3.5rem;
+  }
+
+  &__cards-container {
+    display: flex;
+    justify-content: center;
+    align-items: center; // Centraliza os cards caso tenham alturas diferentes
+    gap: 2.5rem;
+  }
+}
+
+// Block de Cards de Preço
+.pricing-card {
+  background: $color-white;
+  border-radius: 12px;
+  padding: 2.5rem;
+  width: 100%;
+  max-width: 360px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+  border: 1px solid $color-border;
+  text-align: center;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+
+  // Modificador para o plano Pro
+  &--pro {
+    border: 2px solid $color-brand-primary;
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+    padding-top: 3.5rem; // Espaço extra para o badge
+    transform: scale(1.05); // Destaca levemente o tamanho do card
+  }
+
+  &__badge {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: $color-brand-primary;
+    color: $color-white;
+    padding: 0.75rem;
+    font-size: 0.875rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+  }
+
+  &__title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: $color-text-main;
+    margin-bottom: 1rem;
+  }
+
+  &__price-container {
+    display: flex;
+    justify-content: center;
+    align-items: baseline;
+    margin-bottom: 0.25rem;
+  }
+
+  &__currency {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: $color-text-main;
+  }
+
+  &__amount {
+    font-size: 3rem;
+    font-weight: 800;
+    color: $color-text-main;
+    margin: 0 0.25rem;
+  }
+
+  &__period {
+    color: $color-text-muted;
+    font-weight: 500;
+  }
+
+  &__billing-info {
+    font-size: 0.875rem;
+    color: $color-text-muted;
+    margin-bottom: 2rem;
+    min-height: 1.25rem; // Mantém o alinhamento mesmo se o card básico não tiver esse texto
+  }
+
+  &__features {
+    list-style: none;
+    padding: 2rem 0 0 0;
+    margin: 0 0 2rem 0;
+    border-top: 1px solid $color-border;
+    text-align: left;
+    flex-grow: 1; // Empurra o botão sempre para o final do card
+  }
+
+  &__feature-item {
+    color: $color-text-main;
+    margin-bottom: 1rem;
+    font-size: 0.95rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  &__button {
+    width: 100%;
+    padding: 1rem;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    border: none;
+    margin-top: auto;
+
+    &--disabled {
+      background-color: #f3f4f6;
+      color: #9ca3af;
+      cursor: not-allowed;
+    }
+
+    &--primary {
+      background-color: $color-brand-primary;
+      color: $color-white;
+      
+      &:hover {
+        background-color: $color-brand-hover;
+        box-shadow: 0 4px 12px rgba(30, 58, 138, 0.2);
+      }
+    }
+  }
+}

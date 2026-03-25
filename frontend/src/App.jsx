@@ -8,6 +8,7 @@ import PrincipalPage from "./screens/PrincipalPage/PrincipalPage";
 import ArtigoRenda from "./screens/Artigos/Artigo-SuaRenda/ArtigoRenda";
 import ArtigoReserva from "./screens/Artigos/Artigo-reserva/Reserva";
 import ArtigoRegra from "./screens/Artigos/Artigo-50-30-20/Artigo-50-30-20";
+import UpgradePage from "./screens/UpgradePage/UpgradePage";
 
 function App() {
   return (
@@ -16,10 +17,17 @@ function App() {
       <Routes>
         <Route path="/" element={<LoginPage />} />
         <Route path="/suaRenda" element={<ArtigoRenda />} />
+
         <Route path="/reserva" element={<ArtigoReserva />} />
+
         <Route path="/regra50" element={<ArtigoRegra />} />
+
+        <Route path="/upgrade" element={<UpgradePage />} />
+
         <Route path="/sigin" element={<RegistrationPage />} />
+
         <Route path="/about" element={<AboutUs />} />
+
         <Route path="/principal" element={<PrincipalPage />} />
       </Routes>
     </>

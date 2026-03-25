@@ -35,7 +35,7 @@ const Footer = () => {
               <Link to="/about">› SOBRE NÓS</Link>
             </li>
             <li>
-              <Link to="/plano">› PLANO PREMIUM</Link>
+              <Link to="/upgrade">› PLANO PREMIUM</Link>
             </li>
           </ul>
         </div>
