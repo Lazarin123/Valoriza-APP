@@ -1,6 +1,8 @@
+require('dotenv').config(); // Carrega as variáveis de ambiente
 
 const { MongoClient, ServerApiVersion } = require('mongodb');
-const uri = "mongodb+srv://mukadg_db_user:<gGQLZiBApU9ZTmcn>@cluster0.nmidply.mongodb.net/?appName=Cluster0";
+// Use a variável de ambiente para não expor a senha no código
+const uri = process.env.MONGODB_URI;
 
 // Create a MongoClient with a MongoClientOptions object to set the Stable API version
 const client = new MongoClient(uri, {
