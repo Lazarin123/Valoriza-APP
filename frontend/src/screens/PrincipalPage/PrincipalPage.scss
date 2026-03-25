@@ -6,6 +6,21 @@ $red-danger: #EE5D50;
 $orange-main: #FD7E15;
 $bg-light: #F4F7FE;
 
+/* =======================================================
+   CÓDIGO AGRESSIVO PARA OCULTAR A BARRA DE ROLAGEM GLOBAL
+   ======================================================= */
+html, body, * {
+  -ms-overflow-style: none !important;  /* Internet Explorer e Edge */
+  scrollbar-width: none !important;     /* Firefox */
+}
+
+html::-webkit-scrollbar, 
+body::-webkit-scrollbar, 
+*::-webkit-scrollbar {
+  display: none !important;             /* Chrome, Safari e Opera */
+}
+/* ======================================================= */
+
 .dashboard-wrapper {
   background-color: $bg-light;
   min-height: 100vh;
@@ -430,5 +445,122 @@ $bg-light: #F4F7FE;
     width: 100%;
     transition: filter 0.2s;
     &:hover { filter: brightness(1.1); }
+  }
+}
+
+/* ========================================================
+   ADICIONADO PARA O DARK MODE (SOBREPÕE APENAS SE ATIVO)
+   ======================================================== */
+
+.dark-mode-btn {
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: $orange-main;
+  color: white;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  z-index: 9999;
+  transition: transform 0.2s;
+  
+  &:hover {
+    transform: scale(1.1);
+  }
+}
+
+body.dark-theme {
+  .dashboard-wrapper {
+    background-color: #0b1437; // Fundo geral do site 
+    color: white; 
+  }
+
+  .stat-card,
+  .report-card,
+  .chart-card,
+  .modal-content {
+    background-color: #1B254B; // Fundo dos cartões e modais
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.4);
+  }
+
+  // Títulos principais
+  .main-header h1,
+  h2,
+  h4,
+  .name,
+  .modal-content h3 {
+    color: #ffffff;
+  }
+
+  // Textos secundários e valores monetários (h3)
+  .details {
+    h3 {
+      color: $orange-main;
+      font-size: 24px;
+      font-weight: 700;
+      margin: 4px 0;
+      cursor: pointer;
+
+      &:hover {
+        color: $navy;
+      }
+    }
+    
+    p {
+      color: #ffffff;
+    }
+  }
+
+  .tips-header p,
+  .date-label {
+    color: #ffffff;
+  }
+
+  // Cor do ícone circular nos stat-cards
+  .icon {
+    background: rgb(136, 136, 136);
+  }
+
+  // Linha tracejada da lista
+  .spacer-line {
+    border-bottom-color: #072599;
+  }
+
+  // Fundo e borda do Toggle Switch de pagamento
+  .toggle-switch {
+    background: #0b1437;
+    border-color: #1b254b;
+  }
+
+  // Inputs dos modais
+  input {
+    background: #49599d;
+    border-color: #1b254b;
+    color: white;
+    
+    &::placeholder {
+      color: #ffffff;
+    }
+  }
+
+  // Cores do texto no modal Ver Todos
+  .full-item-row span {
+    color: #ffffff;
+  }
+
+  // Ícone de fechar modal (X)
+  .modal-header svg {
+    color: #ffffff;
+  }
+
+  // Botão "Entrada"
+  .edit-link {
+    color: #ffffff;
   }
 }

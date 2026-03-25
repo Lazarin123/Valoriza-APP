@@ -7,6 +7,8 @@ import {
   TrendingUp,
   DollarSign,
   BarChart2,
+  Sun,
+  Moon,
 } from "lucide-react";
 import { Link } from "react-router-dom";
 import Header from "../../components/Header/Header";
@@ -24,6 +26,22 @@ import Footer from "../../components/Footer/Footer";
 
 const PrincipalPage = () => {
   const userId = "samuel_vallis_user";
+
+  // --- TOGGLE DARK MODE ---
+  const [isDarkMode, setIsDarkMode] = useState(() => {
+    return localStorage.getItem(`${userId}_theme`) === "dark";
+  });
+
+  useEffect(() => {
+    if (isDarkMode) {
+      document.body.classList.add("dark-theme");
+      localStorage.setItem(`${userId}_theme`, "dark");
+    } else {
+      document.body.classList.remove("dark-theme");
+      localStorage.setItem(`${userId}_theme`, "light");
+    }
+  }, [isDarkMode]);
+  // -------------------------
 
   // --- ESTADOS ---
   const [salario, setSalario] = useState(() => {
@@ -123,8 +141,18 @@ const PrincipalPage = () => {
 
   return (
     <>
+      <Header />
+
+      {/* --- BOTÃO FLUTUANTE DARK MODE --- */}
+      <button
+        className="dark-mode-btn"
+        onClick={() => setIsDarkMode(!isDarkMode)}
+        title="Alternar Tema"
+      >
+        {isDarkMode ? <Sun size={24} /> : <Moon size={24} />}
+      </button>
+
       <div className="dashboard-wrapper">
-        <Header />
         <main className="content-container">
           {/* Stat Cards */}
           <section className="stats-grid">
@@ -147,7 +175,7 @@ const PrincipalPage = () => {
                     setShowModalSalario(true);
                   }}
                 >
-                  Editar
+                  Entrada
                 </button>
               </div>
             </div>
