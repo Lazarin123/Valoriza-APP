@@ -9,6 +9,7 @@ import ArtigoRenda from "./screens/Artigos/Artigo-SuaRenda/ArtigoRenda";
 import ArtigoReserva from "./screens/Artigos/Artigo-reserva/Reserva";
 import ArtigoRegra from "./screens/Artigos/Artigo-50-30-20/Artigo-50-30-20";
 import UpgradePage from "./screens/UpgradePage/UpgradePage";
+import PaymentPage from "./screens/PaymentPage/PaymentPage";
 
 function App() {
   return (
@@ -27,6 +28,8 @@ function App() {
         <Route path="/sigin" element={<RegistrationPage />} />
 
         <Route path="/about" element={<AboutUs />} />
+
+        <Route path="/payment" element={<PaymentPage />} />
 
         <Route path="/principal" element={<PrincipalPage />} />
       </Routes>

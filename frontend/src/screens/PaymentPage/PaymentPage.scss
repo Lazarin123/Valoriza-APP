@@ -1,0 +1,320 @@
+// Variáveis
+$color-brand-primary: #1e3a8a; // Navy Blue
+$color-brand-light: #eff6ff;
+$color-text-main: #1f2937;
+$color-text-muted: #6b7280;
+$color-bg-light: #f3f4f6;
+$color-white: #ffffff;
+$color-border: #d1d5db;
+$color-success: #10b981;
+$font-family-base: 'Inter', system-ui, sans-serif;
+
+.payment-page {
+  font-family: $font-family-base;
+  background-color: $color-bg-light;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+
+  &__header {
+    background-color: $color-brand-primary;
+    color: $color-white;
+    padding: 1rem 4rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    @media (max-width: 768px) {
+      padding: 1rem;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+  }
+
+  &__back-btn {
+    background: transparent;
+    border: none;
+    color: $color-white;
+    font-weight: 500;
+    cursor: pointer;
+    font-size: 1rem;
+  }
+
+  &__logo {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-weight: 700;
+    font-size: 1.25rem;
+
+    &-icon {
+      background-color: $color-white;
+      color: $color-brand-primary;
+      padding: 0.2rem 0.6rem;
+      border-radius: 4px;
+    }
+  }
+
+  &__header-title {
+    font-weight: 600;
+    letter-spacing: 0.05em;
+  }
+
+  &__main {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    padding: 3rem 2rem;
+
+    @media (max-width: 768px) {
+      padding: 1.5rem 1rem;
+    }
+  }
+
+  &__content {
+    display: flex;
+    gap: 2rem;
+    max-width: 1000px;
+    width: 100%;
+    align-items: flex-start;
+
+    @media (max-width: 768px) {
+      flex-direction: column;
+    }
+  }
+
+  &__section-title {
+    font-size: 0.875rem;
+    font-weight: 700;
+    color: $color-text-muted;
+    margin-bottom: 1.5rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  // Coluna Esquerda
+  &__summary {
+    background-color: $color-white;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+    flex: 1;
+    border: 1px solid $color-border;
+  }
+
+  &__plan-card {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    background-color: $color-brand-light;
+    padding: 1rem;
+    border-radius: 8px;
+    margin-bottom: 2rem;
+    border: 1px solid rgba($color-brand-primary, 0.1);
+  }
+
+  &__plan-icon {
+    background-color: $color-brand-primary;
+    color: $color-white;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    font-weight: bold;
+    font-size: 1.25rem;
+  }
+
+  &__plan-name {
+    font-size: 0.875rem;
+    color: $color-text-muted;
+  }
+
+  &__plan-tier {
+    font-weight: 700;
+    color: $color-brand-primary;
+    font-size: 1.125rem;
+  }
+
+  &__benefits {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 2rem 0;
+
+    li {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.875rem;
+      color: $color-text-main;
+      padding-bottom: 1rem;
+      border-bottom: 1px solid $color-bg-light;
+      margin-bottom: 1rem;
+
+      &:last-child {
+        border-bottom: none;
+        margin-bottom: 0;
+      }
+
+      span:last-child {
+        font-weight: 600;
+      }
+    }
+  }
+
+  &__total {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1.125rem;
+    font-weight: 700;
+    color: $color-text-main;
+    padding-top: 1.5rem;
+    border-top: 2px solid $color-border;
+
+    &-price {
+      font-size: 1.5rem;
+    }
+  }
+
+  // Coluna Direita
+  &__methods {
+    background-color: $color-white;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+    flex: 1.2;
+    border: 1px solid $color-border;
+  }
+
+  &__security-badge {
+    text-align: center;
+    font-size: 0.75rem;
+    color: $color-success;
+    margin: 1.5rem 0;
+    font-weight: 500;
+  }
+
+  &__submit-btn {
+    width: 100%;
+    background-color: $color-brand-primary;
+    color: $color-white;
+    padding: 1rem;
+    border-radius: 8px;
+    font-weight: 700;
+    font-size: 1rem;
+    border: none;
+    cursor: pointer;
+    transition: all 0.2s ease;
+
+    &:hover:not(:disabled) {
+      background-color: darken($color-brand-primary, 10%);
+    }
+
+    &:disabled {
+      background-color: $color-text-muted;
+      cursor: not-allowed;
+    }
+  }
+}
+
+// Opções de Pagamento (Pix / Cartão)
+.payment-option {
+  display: block;
+  border: 1px solid $color-border;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+
+  &--active {
+    border-color: $color-brand-primary;
+    background-color: rgba($color-brand-primary, 0.02);
+  }
+
+  &__header {
+    display: flex;
+    align-items: center;
+    padding: 1.25rem;
+    gap: 0.75rem;
+
+    input[type="radio"] {
+      accent-color: $color-brand-primary;
+      width: 1.125rem;
+      height: 1.125rem;
+    }
+  }
+
+  &__title {
+    font-weight: 600;
+    color: $color-text-main;
+  }
+
+  &__content {
+    padding: 0 1.25rem 1.25rem 1.25rem;
+    border-top: 1px solid rgba($color-border, 0.5);
+    margin-top: 0.5rem;
+    padding-top: 1.25rem;
+
+    &--pix {
+      text-align: center;
+    }
+
+    &--card {
+      .form-group {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+        margin-bottom: 1rem;
+
+        label {
+          font-size: 0.75rem;
+          font-weight: 600;
+          color: $color-text-muted;
+        }
+
+        input {
+          border: 1px solid $color-border;
+          border-radius: 6px;
+          padding: 0.75rem;
+          font-family: inherit;
+          font-size: 0.875rem;
+
+          &:focus {
+            outline: none;
+            border-color: $color-brand-primary;
+          }
+        }
+      }
+
+      .form-row {
+        display: flex;
+        gap: 1rem;
+
+        .form-group {
+          flex: 1;
+        }
+      }
+    }
+  }
+
+  &__pix-info {
+    font-size: 0.875rem;
+    font-weight: 500;
+    margin-bottom: 1rem;
+  }
+
+  &__qr-placeholder {
+    width: 150px;
+    height: 150px;
+    background-color: $color-bg-light;
+    border: 2px dashed $color-border;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.75rem;
+    color: $color-text-muted;
+    border-radius: 8px;
+  }
+}

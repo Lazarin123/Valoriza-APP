@@ -17,7 +17,7 @@ const UpgradePage = () => {
           <Link to="/principal" className="upgrade-screen__nav-link">
             Home
           </Link>
-          <Link to="/pagamento" className="upgrade-screen__nav-link">
+          <Link to="/payment" className="upgrade-screen__nav-link">
             Pagamento
           </Link>
           <Link to="/about" className="upgrade-screen__nav-link">
@@ -108,7 +108,7 @@ const UpgradePage = () => {
             </ul>
 
             <Link
-              to="/pagamento"
+              to="/payment"
               className="pricing-card__button pricing-card__button--primary"
             >
               Atualizar para Pro Agora
