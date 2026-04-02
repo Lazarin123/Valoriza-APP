@@ -2,6 +2,13 @@ import React from "react";
 import "./DicasSection.scss";
 import { Link } from "react-router-dom";
 
+// Link unificado para o WhatsApp (ícone e botão)
+const whatsappNumber = "5511946701625";
+const message = encodeURIComponent(
+  "Olá! Gostaria de falar com o suporte do Valoriza App.",
+);
+const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${message}`;
+
 const DicasSection = () => {
   const [isBlured, setIsBlured] = React.useState(true); // Definido como true para teste, altere conforme sua lógica
 
@@ -174,7 +181,7 @@ const DicasSection = () => {
                     realmente importa.
                   </p>
                   <div className="lock-buttons">
-                    <button className="btn-upgrade">
+                    <Link to="/upgrade" className="btn-upgrade">
                       Começar agora
                       <span>
                         <img
@@ -182,8 +189,12 @@ const DicasSection = () => {
                           alt="começar agora"
                         />
                       </span>
-                    </button>
-                    <button className="btn-upgrade">
+                    </Link>
+                    <a
+                      href={whatsappUrl}
+                      className="btn-upgrade"
+                      target="_blank"
+                    >
                       Entre em contato
                       <span>
                         <img
@@ -191,7 +202,7 @@ const DicasSection = () => {
                           alt="whatsapp"
                         />
                       </span>
-                    </button>
+                    </a>
                   </div>
                 </div>
               </div>

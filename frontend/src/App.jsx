@@ -10,6 +10,9 @@ import ArtigoReserva from "./screens/Artigos/Artigo-reserva/Reserva";
 import ArtigoRegra from "./screens/Artigos/Artigo-50-30-20/Artigo-50-30-20";
 import UpgradePage from "./screens/UpgradePage/UpgradePage";
 import PaymentPage from "./screens/PaymentPage/PaymentPage";
+import CortarGastos from "./screens/Artigos/Artigo-CortarGastos/CortarGastos";
+import DividasCaras from "./screens/Artigos/Artigo-DividasCaras/DividasCaras";
+import Investir from "./screens/Artigos/Artigo-Investir/Investir";
 
 function App() {
   return (
@@ -22,6 +25,12 @@ function App() {
         <Route path="/reserva" element={<ArtigoReserva />} />
 
         <Route path="/regra50" element={<ArtigoRegra />} />
+
+        <Route path="/cortarGastos" element={<CortarGastos />} />
+
+        <Route path="/dividas" element={<DividasCaras />} />
+
+        <Route path="/investir" element={<Investir />} />
 
         <Route path="/upgrade" element={<UpgradePage />} />
 
