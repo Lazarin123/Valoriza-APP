@@ -1,3 +1,4 @@
+// --- Imports ---
 import React, { useState, useMemo, useEffect } from "react";
 import {
   Zap,
