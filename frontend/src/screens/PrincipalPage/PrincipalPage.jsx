@@ -10,7 +10,6 @@ import {
   Sun,
   Moon,
 } from "lucide-react";
-import { Link } from "react-router-dom";
 import Header from "../../components/Header/Header";
 import {
   ResponsiveContainer,
@@ -23,6 +22,7 @@ import {
 } from "recharts";
 import "./PrincipalPage.scss";
 import Footer from "../../components/Footer/Footer";
+import DicasSection from "../../components/Dicas/DicasSection";
 
 const PrincipalPage = () => {
   const userId = "samuel_vallis_user";
@@ -350,85 +350,7 @@ const PrincipalPage = () => {
           </div>
 
           {/* --- SEÇÃO DE DICAS FINANCEIRAS --- */}
-          <section className="tips-container">
-            <div className="tips-header">
-              <h2>Pequenas Dicas que Transformam Sua Vida Financeira</h2>
-              <p>
-                Aprenda estratégias simples para melhorar sua saúde financeira
-              </p>
-            </div>
-
-            <div className="tips-grid">
-              {/* Dica 1 */}
-              <article className="tip-card">
-                <div className="tip-badge">Fácil • 15 min</div>
-                <div className="tip-content">
-                  <div className="tip-icon-box">
-                    <span className="icon-emoji">💰</span>
-                  </div>
-                  <h4>1. Entenda os seus Gastos</h4>
-                  <h5>Fundação do planejamento financeiro</h5>
-                  <p>
-                    O primeiro passo do planejamento financeiro é entender
-                    exatamente quanto dinheiro entra todos os meses...
-                  </p>
-                  <ul>
-                    <li>Listar todas as fontes de renda</li>
-                    <li>Calcular renda líquida (após impostos)</li>
-                  </ul>
-                </div>
-                <Link to="/suaRenda" className="btn-learn-more">
-                  APRENDER MAIS <span>🚀</span>
-                </Link>
-              </article>
-
-              {/* Dica 2 */}
-              <article className="tip-card">
-                <div className="tip-badge orange">Médio • 30 min</div>
-                <div className="tip-content">
-                  <div className="tip-icon-box">
-                    <span className="icon-emoji">📊</span>
-                  </div>
-                  <h4>2. Use a Regra 50-30-20</h4>
-                  <h5>Método simples de divisão de renda</h5>
-                  <p>
-                    Uma estratégia muito utilizada no planejamento financeiro é
-                    a regra 50-30-20. Ela ajuda a equilibrar sua vida...
-                  </p>
-                  <ul>
-                    <li>Separar 50% para necessidades</li>
-                    <li>Separar 30% para desejos</li>
-                  </ul>
-                </div>
-                <Link to="/regra50" className="btn-learn-more">
-                  APRENDER MAIS <span>🚀</span>
-                </Link>
-              </article>
-
-              {/* Dica 3 */}
-              <article className="tip-card">
-                <div className="tip-badge purple">Médio • 6-12 Meses</div>
-                <div className="tip-content">
-                  <div className="tip-icon-box">
-                    <span className="icon-emoji">🛡️</span>
-                  </div>
-                  <h4>3. Crie uma reserva de emergência</h4>
-                  <h5>Sua proteção financeira</h5>
-                  <p>
-                    A reserva de emergência é um dos pilares mais importantes de
-                    uma vida financeira saudável. Ela serve como...
-                  </p>
-                  <ul>
-                    <li>Calcular custo de vida mensal</li>
-                    <li>Definir meta (3-6 meses)</li>
-                  </ul>
-                </div>
-                <Link to="/reserva" className="btn-learn-more">
-                  APRENDER MAIS <span>🚀</span>
-                </Link>
-              </article>
-            </div>
-          </section>
+          <DicasSection />
         </main>
 
         {/* --- MODAIS --- */}
