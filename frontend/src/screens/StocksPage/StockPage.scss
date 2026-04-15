@@ -1,0 +1,148 @@
+// Definição de Variáveis (White Mode por padrão)
+:root {
+  --bg-page: #f8fafc;
+  --bg-card: #ffffff;
+  --text-primary: #1e293b;
+  --text-secondary: #64748b;
+  --border-color: #e2e8f0;
+  --ticker-bg: #f1f5f9;
+  --ticker-text: #475569;
+  --positive: #10b981;
+  --negative: #ef4444;
+}
+
+// Sobrescrita para Dark Mode
+.dark-mode {
+  --bg-page: #0f172a;
+  --bg-card: #1e293b;
+  --text-primary: #f8fafc;
+  --text-secondary: #94a3b8;
+  --border-color: #334155;
+  --ticker-bg: #334155;
+  --ticker-text: #cbd5e1;
+}
+
+.page-wrapper {
+  background-color: var(--bg-page);
+  min-height: 100vh;
+  transition: background-color 0.3s ease;
+}
+
+.stocks-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+
+  .stocks-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 3rem;
+
+    &__left {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+    }
+
+    &__back {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      color: var(--text-primary);
+      padding: 0.6rem 1.2rem;
+      border-radius: 8px;
+      cursor: pointer;
+      font-weight: 500;
+      transition: all 0.2s;
+
+      &:hover {
+        opacity: 0.8;
+      }
+    }
+
+    &__title {
+      font-size: 1.75rem;
+      color: var(--text-primary);
+      font-weight: 700;
+    }
+
+    &__toggle {
+      background: var(--text-primary);
+      color: var(--bg-card);
+      border: none;
+      padding: 0.6rem 1.2rem;
+      border-radius: 20px;
+      cursor: pointer;
+      font-weight: 600;
+      font-size: 0.85rem;
+    }
+  }
+}
+
+.stocks-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); // Fixado em 4 colunas como solicitado
+  gap: 1.5rem;
+
+  @media (max-width: 1100px) { grid-template-columns: repeat(2, 1fr); }
+  @media (max-width: 650px) { grid-template-columns: 1fr; }
+}
+
+.stock-card {
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: 16px;
+  padding: 1.75rem;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+  transition: transform 0.2s;
+
+  &:hover {
+    transform: translateY(-5px);
+  }
+
+  &__top {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 1.25rem;
+  }
+
+  &__name {
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin: 0;
+  }
+
+  &__percentage {
+    font-size: 1.1rem;
+    font-weight: 700;
+
+    &--positive { color: var(--positive); }
+    &--negative { color: var(--negative); }
+  }
+
+  &__description {
+    font-size: 0.95rem;
+    color: var(--text-secondary);
+    line-height: 1.5;
+    margin-bottom: 2rem;
+    flex-grow: 1;
+  }
+
+  &__footer {
+    display: flex;
+  }
+
+  &__ticker {
+    background-color: var(--ticker-bg);
+    color: var(--ticker-text);
+    padding: 0.4rem 0.75rem;
+    border-radius: 6px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+  }
+}

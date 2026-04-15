@@ -13,6 +13,8 @@ import PaymentPage from "./screens/PaymentPage/PaymentPage";
 import CortarGastos from "./screens/Artigos/Artigo-CortarGastos/CortarGastos";
 import DividasCaras from "./screens/Artigos/Artigo-DividasCaras/DividasCaras";
 import Investir from "./screens/Artigos/Artigo-Investir/Investir";
+import InvestmentPage from "./screens/InvestimentPage/InvestimentPage";
+import StocksPage from "./screens/StocksPage/StocksPage";
 
 function App() {
   return (
@@ -41,6 +43,10 @@ function App() {
         <Route path="/payment" element={<PaymentPage />} />
 
         <Route path="/principal" element={<PrincipalPage />} />
+
+        <Route path="/investimento" element={<InvestmentPage />} />
+
+        <Route path="/acoes" element={<StocksPage />} />
       </Routes>
     </>
   );

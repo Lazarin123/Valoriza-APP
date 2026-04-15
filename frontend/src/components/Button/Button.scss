@@ -1,0 +1,49 @@
+$orange-main: #ff801a;
+$orange-dark: #d96a12; // Ajustado para contraste real do ícone
+$white: #ffffff;
+
+.cta-button {
+  display: inline-flex;
+  align-items: center;
+  background-color: $orange-main;
+  border: none;
+  border-radius: 14px; 
+  padding: 6px 6px 6px 24px; 
+  cursor: pointer;
+  text-decoration: none; // Caso você decida trocar 'button' por 'Link' futuramente
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  outline: none;
+
+  &__text {
+    color: $white;
+    font-size: 16px;
+    font-weight: 700;
+    margin-right: 20px;
+    font-family: sans-serif;
+    user-select: none;
+  }
+
+  &__icon-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: $orange-dark;
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+  }
+
+  &:hover {
+    background-color: lighten($orange-main, 3%);
+    box-shadow: 0 4px 15px rgba($orange-main, 0.3);
+
+    .cta-button__icon-wrapper {
+      transform: translateX(2px); // Pequeno charme: a seta "empurra" para o lado
+    }
+  }
+
+  &:active {
+    transform: scale(0.98);
+  }
+}

@@ -24,6 +24,7 @@ import {
 import "./PrincipalPage.scss";
 import Footer from "../../components/Footer/Footer";
 import DicasSection from "../../components/Dicas/DicasSection";
+import Button from "../../components/Button/Button";
 
 const PrincipalPage = () => {
   const userId = "samuel_vallis_user";
@@ -352,6 +353,7 @@ const PrincipalPage = () => {
 
           {/* --- SEÇÃO DE DICAS FINANCEIRAS --- */}
           <DicasSection />
+          <Button text="Começar a Investir" to="/investimento" />
         </main>
 
         {/* --- MODAIS --- */}
