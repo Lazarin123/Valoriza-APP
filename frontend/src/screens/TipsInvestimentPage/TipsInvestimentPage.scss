@@ -1,0 +1,203 @@
+// Variáveis alinhadas ao seu perfil
+$color-navy: #1e2952;
+$color-orange: #ff7a00;
+$color-bg-light: #f4f7ff;
+$color-bg-dark: #070b17;
+$color-white: #e6e6e6;
+$transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+
+.tips-page {
+  --bg-page: #{$color-bg-light};
+  --title-color: #{$color-navy};
+  --back-btn: #{$color-navy};
+
+  &.dark-mode {
+    --bg-page: #{$color-bg-dark};
+    --title-color: #ffffff;
+    --back-btn: #ffffff;
+  }
+
+  background-color: var(--bg-page);
+  min-height: 100vh;
+  padding: 4rem 2rem;
+  font-family: 'Inter', sans-serif;
+  transition: $transition;
+
+  &__container {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  // Toggle Flutuante
+  .theme-toggle {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 52px;
+    height: 52px;
+    background-color: $color-orange;
+    border-radius: 50%;
+    border: 2px solid white;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    transition: transform 0.2s ease;
+    &:hover { transform: scale(1.1); }
+  }
+
+  &__header {
+    margin-bottom: 4rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  // Estilo do Botão Voltar
+  &__back-btn {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
+    color: var(--back-btn);
+    font-weight: 600;
+    width: fit-content;
+    transition: opacity 0.2s;
+    &:hover { opacity: 0.7; }
+  }
+
+  &__title {
+    color: var(--title-color);
+    font-size: 2.8rem;
+    font-weight: 800;
+    position: relative;
+    transition: color 0.3s ease;
+    
+    &::after {
+      content: '';
+      display: block;
+      width: 60px;
+      height: 4px;
+      background: $color-orange;
+      margin-top: 10px;
+      border-radius: 2px;
+    }
+  }
+
+  &__subtitle {
+    font-size: 1.15rem;
+    color: var(--subtitle-color);
+    max-width: 800px;
+    line-height: 1.5;
+    font-weight: 500;
+    margin-top: 1rem;
+    transition: color 0.3s ease;
+  }
+
+  &__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2rem;
+    margin-bottom: 5rem;
+  }
+
+  &__faq {
+    background: $color-white;
+    padding: 3rem;
+    border-radius: 24px;
+    box-shadow: 0 10px 30px rgba($color-navy, 0.05);
+
+    .faq-title {
+      color: $color-navy;
+      margin-bottom: 2rem;
+    }
+
+    .faq-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+      @media (max-width: 768px) { grid-template-columns: 1fr; }
+      
+      h4 { color: $color-orange; margin-bottom: 0.5rem; }
+      p { color: #64748b; line-height: 1.6; }
+    }
+  }
+}
+
+// Estilos dos Cards (Mantidos)
+.tip-card {
+  background-color: $color-navy;
+  border-radius: 20px;
+  padding: 2.5rem;
+  display: flex;
+  flex-direction: column;
+  color: #ffffff;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+  transition: $transition;
+
+  &:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 25px 50px rgba($color-orange, 0.15);
+  }
+
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 1.5rem;
+  }
+
+  &__title { font-size: 1.6rem; font-weight: 700; }
+  &__icon { color: $color-orange; fill: rgba($color-orange, 0.2); }
+  &__body { flex-grow: 1; }
+
+  &__text {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.85);
+    margin-bottom: 1.5rem;
+  }
+
+  &__list {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 2rem;
+    li {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 0.8rem;
+      font-size: 0.9rem;
+      svg { color: $color-orange; }
+      &.dot::before { content: '•'; color: $color-orange; font-size: 1.5rem; line-height: 0; }
+    }
+  }
+
+  &__resume {
+    background-color: $color-orange;
+    border-radius: 12px;
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+    h3 { font-size: 1.1rem; font-weight: 800; margin-bottom: 0.5rem; text-transform: uppercase; }
+    p, li { font-size: 0.85rem; line-height: 1.5; font-weight: 500; list-style: none; color: rgb(202, 202, 202); }
+  }
+
+  &__btn {
+    align-self: flex-start;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background-color: transparent;
+    border: 2px solid $color-orange;
+    color: #ffffff;
+    padding: 0.8rem 1.5rem;
+    border-radius: 10px;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 0.9rem;
+    transition: $transition;
+    &:hover { background-color: $color-orange; transform: scale(1.05); }
+  }
+}

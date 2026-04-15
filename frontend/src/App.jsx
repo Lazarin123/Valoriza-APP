@@ -15,6 +15,7 @@ import DividasCaras from "./screens/Artigos/Artigo-DividasCaras/DividasCaras";
 import Investir from "./screens/Artigos/Artigo-Investir/Investir";
 import InvestmentPage from "./screens/InvestimentPage/InvestimentPage";
 import StocksPage from "./screens/StocksPage/StocksPage";
+import TipsInvestmentPage from "./screens/TipsInvestimentPage/TipsInvestimentPage";
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
       {/* <Header/> */}
       <Routes>
         <Route path="/" element={<LoginPage />} />
+
         <Route path="/suaRenda" element={<ArtigoRenda />} />
 
         <Route path="/reserva" element={<ArtigoReserva />} />
@@ -47,6 +49,8 @@ function App() {
         <Route path="/investimento" element={<InvestmentPage />} />
 
         <Route path="/acoes" element={<StocksPage />} />
+
+        <Route path="/dicas-investimentos" element={<TipsInvestmentPage />} />
       </Routes>
     </>
   );
