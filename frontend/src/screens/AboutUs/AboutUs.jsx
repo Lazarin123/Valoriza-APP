@@ -42,7 +42,7 @@ const AboutUs = () => {
           <div className="text-content">
             <h4 className="section-subtitle">Conheça mais da gente!</h4>
             <p className="description">
-              A Vallis Tech nasce com a missão de simplificar a relação das
+              A Vollup Tech nasce com a missão de simplificar a relação das
               pessoas com o dinheiro. Desenvolvedora do Valoriza App, nossa
               startup combina engenharia de software de ponta com um design
               intuitivo para entregar uma plataforma de planejamento financeiro

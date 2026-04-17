@@ -90,7 +90,7 @@ const Footer = () => {
 
       {/* Bottom: Copyright e Techs */}
       <div className="footer-bottom">
-        <p>© {currentYear} - Desenvolvido por Vallis Tech</p>
+        <p>© {currentYear} - Desenvolvido por Vollup Tech</p>
         <div className="tech-stack">
           <span className="tech-icon js">JS</span>
           <span className="tech-icon react">REACT</span>
