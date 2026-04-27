@@ -216,7 +216,7 @@ const PrincipalPage = () => {
                     setShowModalGasto(true);
                   }}
                 >
-                  Novo Gasto <Zap size={14} />
+                  Add Novo Gasto Fixo +
                 </button>
               </div>
               <div className="list-container">
@@ -279,7 +279,7 @@ const PrincipalPage = () => {
                   className="add-btn-clean"
                   onClick={() => setShowModalVariavel(true)}
                 >
-                  Novo Gasto Variável <Zap size={14} />
+                  Add Novo Gasto Variável +
                 </button>
               </div>
               <div className="list-container">

@@ -21,6 +21,10 @@ body::-webkit-scrollbar,
 }
 /* ======================================================= */
 
+.add-btn-clean:hover {
+  color: $orange-main;
+}
+
 .dashboard-wrapper {
   background-color: $bg-light;
   min-height: 100vh;

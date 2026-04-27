@@ -404,7 +404,7 @@ const InvestmentPage = () => {
                 O mercado financeiro é dinâmico. Antes de investir, entenda que
                 taxas de câmbio variam a cada segundo. Este conversor utiliza
                 dados reais. Aqui te ensinamos como e onde investir, clica em
-                saiba mais!
+                saiba mais! Leia abaixo para entender mais!
               </p>
               <Link
                 to="/dicas-investimentos"
