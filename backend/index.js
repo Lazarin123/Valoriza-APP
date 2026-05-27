@@ -5,14 +5,9 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-// Importe suas rotas aqui
+// Importação e Registro da rota
 const gastosRoutes = require('./routes/gastos');
-app.use('/api/gastos', gastosRoutes);
-
-// Teste rápido: adiciona essa rota temporária
-app.get('/api/test', (req, res) => {
-    res.json({ message: "Back-end funcionando!" });
-});
+app.use('/api/gastos', gastosRoutes); 
 
 const PORT = process.env.PORT || 3000;
-app.listen(PORT, () => console.log(`Servidor rodando na porta ${PORT}`));
+app.listen(PORT, () => console.log(`Backend rodando na porta ${PORT}`));
