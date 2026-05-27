@@ -4,9 +4,9 @@ import { ArrowLeft, Clock, BarChart } from "lucide-react";
 import Header from "../../../components/Header/Header";
 import Footer from "../../../components/Footer/Footer";
 import "./DividasCaras";
-import ImageArtigoDivida from "../../../assets/images/ImagesArtigos/Images-Artigo-Dim";
-import ImageArtigoDvCara from "../../../assets/images/ImagesArtigos/Images-Artigo-DvCara.png";
-import ImageArtigoBalanca from "../../../assets/images/ImagesArtigos/Images-Artigo-Balanca.png";
+import ImageArtigoDivida from "../../../assets/images/ImagesArtigos/Images-Artigo-Dim.png";
+import ImageArtigoDvCara from "../../../assets/images/ImagesArtigos/Images-Artigo-Moca.png";
+import ImageArtigoBalanca from "../../../assets/images/ImagesArtigos/Images-Artigo-Pensamento.png";
 
 const DividasCaras = () => {
   return (

@@ -10,7 +10,7 @@ import "./AboutUs.scss";
 import Footer from "../../components/Footer/Footer";
 import Header from "../../components/Header/Header";
 import Sidebar from "../../components/SideBar/SideBar";
-import aboutImage from "../../assets/images/sobreImage.jpg";
+import aboutImage from "../../assets/images/investimento-Page1.png";
 import video from "../../assets/videos/AboutVideo.mp4";
 
 const AboutUs = () => {

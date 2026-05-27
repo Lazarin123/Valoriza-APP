@@ -550,8 +550,8 @@ import Header from "../../components/Header/Header";
 import Footer from "../../components/Footer/Footer";
 
 // Certifique-se de que estes caminhos existem no seu projeto!
-import investimento2 from "../../assets/images/investimento-Page1";
-import investimento1video from "../../assets/videos/video-investiment.mp4";
+import investimento2 from "../../assets/images/investimento-Page1.png";
+import investimento1video from "../../assets/videos/AboutVideo.mp4";
 import { Link } from "react-router-dom";
 
 // Ações Gráfico (Apenas para o card de exemplo em cima)
