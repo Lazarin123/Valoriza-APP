@@ -22,7 +22,7 @@ const Sidebar = ({ isOpen, onClose }) => {
     {
       icon: <Wallet size={20} />,
       label: "Investimentos",
-      path: "/investimentos",
+      path: "/investimento",
     },
     { icon: <TrendingUp size={20} />, label: "Upgrade", path: "/upgrade" },
     { icon: <LogOut size={20} />, label: "Sair", path: "/" },
