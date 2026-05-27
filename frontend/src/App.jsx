@@ -1,7 +1,7 @@
 import React from "react";
 import "./App.css";
 import { Route, Routes } from "react-router-dom";
-import LoginPage from "./screens/LoginPage/loginPage";
+import LoginPage from "./screens/LoginPage/LoginPage";
 import RegistrationPage from "./screens/RegistrationPage/RegistrationPage";
 import AboutUs from "./screens/AboutUs/AboutUs";
 import PrincipalPage from "./screens/PrincipalPage/PrincipalPage";
