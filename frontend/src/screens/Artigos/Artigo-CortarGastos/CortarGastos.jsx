@@ -4,7 +4,7 @@ import { ArrowLeft, Clock, BarChart } from "lucide-react";
 import Header from "../../../components/Header/Header";
 import Footer from "../../../components/Footer/Footer";
 import "./CortarGastos";
-import ImageArtigoCorte from "../../../assets/images/ImagesArtigos/Images-Artigo-Corte.png";
+import ImageArtigoCorte from "../../../assets/images/ImagesArtigos/Images-Artigo-Certeiro";
 import ImageArtigoPlaneje from "../../../assets/images/ImagesArtigos/Images-Artigo-Planeje.png";
 import ImageArtigoArvore from "../../../assets/images/ImagesArtigos/Images-Artigo-Arvore.png";
 

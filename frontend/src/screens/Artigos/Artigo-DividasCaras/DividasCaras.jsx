@@ -4,7 +4,7 @@ import { ArrowLeft, Clock, BarChart } from "lucide-react";
 import Header from "../../../components/Header/Header";
 import Footer from "../../../components/Footer/Footer";
 import "./DividasCaras";
-import ImageArtigoDivida from "../../../assets/images/ImagesArtigos/Images-Artigo-Dividas.png";
+import ImageArtigoDivida from "../../../assets/images/ImagesArtigos/Images-Artigo-Dim";
 import ImageArtigoDvCara from "../../../assets/images/ImagesArtigos/Images-Artigo-DvCara.png";
 import ImageArtigoBalanca from "../../../assets/images/ImagesArtigos/Images-Artigo-Balanca.png";
 
